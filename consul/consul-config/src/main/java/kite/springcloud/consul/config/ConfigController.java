@@ -2,7 +2,6 @@ package kite.springcloud.consul.config;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,21 +14,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class ConfigController {
-
-    @Autowired
-    private MySqlConfig mySqlConfig;
-
     @Autowired
     private MySqlComplexConfig mySqlComplexConfig;
 
 
     @GetMapping(value = "mysqlhost")
-    public String getMysqlHost(){
-        return mySqlConfig.getHost();
+    public String getMysqlHost() {
+        return mySqlComplexConfig.getHost();
     }
 
     @GetMapping(value = "mysqluser")
-    public String getMysqlUser(){
+    public String getMysqlUser() {
         log.info(mySqlComplexConfig.getHost());
         MySqlComplexConfig.UserInfo userInfo = mySqlComplexConfig.getUser();
         return userInfo.toString();
