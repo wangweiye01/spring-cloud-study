@@ -1,4 +1,4 @@
-package kite.springcloud.consul.config;
+package kite.springcloud.consul;
 
 
 import org.springframework.boot.SpringApplication;
