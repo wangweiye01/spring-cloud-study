@@ -10,7 +10,7 @@ management:
     health:
       sensitive: false
     restart:
-      enabled: true
+      enabled: false
     shutdown:
-      enabled: true
+      enabled: false
 
