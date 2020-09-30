@@ -1,6 +1,8 @@
 spring:
   cloud:
     consul:
+      host: 47.92.241.17
+      port: 8500
       config:
         enabled: true    # 启用配置中心
         format: yaml     # 指定配置格式为 yaml
