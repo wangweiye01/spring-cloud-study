@@ -36,8 +36,8 @@ spring:
           environment:
             spring:
               rabbitmq:
-                host: localhost
-                port: 32775
+                host: 47.92.241.17
+                port: 5672
                 username: guest
                 password: guest
 server:
