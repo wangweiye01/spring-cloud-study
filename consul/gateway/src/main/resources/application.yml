@@ -5,9 +5,9 @@ spring:
     name: gateway
   redis:
     database: 1
-    host: localhost
-    port: 32768
-    password: 1qaz@WSX
+    host: 47.92.241.17
+    port: 9865
+    password: 7YfN#Dk54w25r3
     jedis:
       pool:
         max-active: 8
