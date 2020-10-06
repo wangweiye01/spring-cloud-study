@@ -4,6 +4,8 @@ import kite.springcloud.common.stream.LogInfo;
 import kite.springcloud.common.stream.MyProcessor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.stream.annotation.StreamListener;
+import org.springframework.integration.annotation.ServiceActivator;
+import org.springframework.messaging.Message;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
@@ -21,21 +23,30 @@ public class LogMessageListener {
     /**
      * 通过 MyProcessor.MESSAGE_INPUT 接收消息
      * 然后通过 SendTo 将处理后的消息发送到 MyProcessor.LOG_FORMAT_OUTPUT
-     *
+     * <p>
      * 当消费失败时，默认的策略是重试。当重试成功了，则不会抛出异常；当重试失败，抛出异常，消费结束。
+     *
      * @param message
      * @return
      */
     @StreamListener(MyProcessor.MESSAGE_INPUT)
     @SendTo(MyProcessor.LOG_FORMAT_OUTPUT)
     public String processLogMessage(String message) {
-        if (retryCount == 3) {
+        if (retryCount == 4) {
             log.info(String.format("重试次数：%d, 接收到原始消息：%s", retryCount, message));
             return "「" + message + "」";
         } else {
             retryCount++;
             throw new RuntimeException("消费失败!");
         }
+    }
+
+    /**
+     * 自定义消费错误处理
+     */
+    @ServiceActivator(inputChannel = "kite.log.messages.logConsumer-group1.errors")
+    public void error(Message<?> message) {
+        log.info("消息消费失败，这里处理降级逻辑！");
     }
 
 //    @StreamListener(MyProcessor.MESSAGE_INPUT)
