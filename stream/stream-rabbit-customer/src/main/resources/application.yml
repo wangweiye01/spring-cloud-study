@@ -18,6 +18,8 @@ spring:
           destination: kite.log.messages
           binder: local_rabbit
           group: logConsumer-group1
+          consumer:
+            max-attempts: 3 #失败重试次数
         log_output:
           destination: kite.log.messages
           binder: local_rabbit

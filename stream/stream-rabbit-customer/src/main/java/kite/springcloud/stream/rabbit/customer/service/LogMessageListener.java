@@ -32,8 +32,7 @@ public class LogMessageListener {
     @StreamListener(MyProcessor.MESSAGE_INPUT)
     @SendTo(MyProcessor.LOG_FORMAT_OUTPUT)
     public String processLogMessage(String message) {
-        // 默认重试次数是3，如果大于3就会走else逻辑
-        if (retryCount == 3) {
+        if (retryCount == 4) {
             log.info(String.format("重试成功！重试次数：%d, 接收到原始消息：%s", retryCount, message));
             return "「" + message + "」";
         } else {
