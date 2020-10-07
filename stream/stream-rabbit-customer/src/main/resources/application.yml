@@ -30,6 +30,9 @@ spring:
         log_format_output:
           destination: kite.log.format.messages
           binder: local_rabbit
+        delay_message_input:
+          destination: kite.log.delay.message
+          binder: local_rabbit
       binders:
         local_rabbit:
           type: rabbit
@@ -40,14 +43,11 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
-#      rabbit: #设置延时队列
-#        bindings:
-#          log_input:
-#            consumer:
-#              delayed-exchange: true
-#          log_output:
-#            producer:
-#              delayed-exchange: true
+      rabbit: #设置延时队列
+        bindings:
+          delay_message_input:
+            consumer:
+              delayed-exchange: true
 server:
   port: 8201
 

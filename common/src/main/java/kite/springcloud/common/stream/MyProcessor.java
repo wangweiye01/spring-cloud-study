@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public interface MyProcessor {
+    String DELAY_MESSAGE_INPUT = "delay_message_input";
 
     String MESSAGE_INPUT = "log_input";
 
@@ -35,4 +36,6 @@ public interface MyProcessor {
     @Output(LOG_FORMAT_OUTPUT)
     MessageChannel logFormatOutput();
 
+    @Input(DELAY_MESSAGE_INPUT)
+    SubscribableChannel delayMessageInput();
 }
