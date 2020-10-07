@@ -40,6 +40,14 @@ spring:
                 port: 5672
                 username: guest
                 password: guest
+#      rabbit: #设置延时队列
+#        bindings:
+#          log_input:
+#            consumer:
+#              delayed-exchange: true
+#          log_output:
+#            producer:
+#              delayed-exchange: true
 server:
   port: 8201
 

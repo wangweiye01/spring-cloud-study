@@ -32,7 +32,7 @@ public class LogMessageListener {
     @StreamListener(MyProcessor.MESSAGE_INPUT)
     @SendTo(MyProcessor.LOG_FORMAT_OUTPUT)
     public String processLogMessage(String message) {
-        if (retryCount == 4) {
+        if (retryCount == 3) {
             log.info(String.format("重试成功！重试次数：%d, 接收到原始消息：%s", retryCount, message));
             return "「" + message + "」";
         } else {
