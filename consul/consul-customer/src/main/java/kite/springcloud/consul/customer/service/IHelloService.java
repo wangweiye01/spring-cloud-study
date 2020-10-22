@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author fengzheng
  * @date 2018/9/26
  */
-@FeignClient(value = "consul-provider")
+@FeignClient(value = "consul-provider", fallback = ServiceHystrix.class)
 public interface IHelloService {
 
     @RequestMapping(value = "/test")
