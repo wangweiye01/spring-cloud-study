@@ -42,7 +42,7 @@ public class HelloController {
     public String nice(){
         List<String> services = discoveryClient.getServices();
         for(String s : services){
-            log.info("gogogo" + s);
+            log.info(s);
         }
         return "nice to meet you!";
     }
