@@ -1,17 +1,17 @@
 spring:
   application:
     name: consul-oauth-client
-#  redis:
-#    database: 2
-#    host: localhost
-#    port: 32768
-#    password: 1qaz@WSX
-#    jedis:
-#      pool:
-#        max-active: 8
-#        max-idle: 8
-#        min-idle: 0
-#    timeout: 100ms
+  redis:
+    database: 2
+    host: 47.92.241.17
+    port: 9865
+    password: 7YfN#Dk54w25r3
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+    timeout: 100ms
   cloud:
     consul:
       discovery:
@@ -40,3 +40,10 @@ security:
       jwt:
         key-uri: http://localhost:5010/oauth/token_key
         key-value: dev
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+  server:
+    port: 15016
