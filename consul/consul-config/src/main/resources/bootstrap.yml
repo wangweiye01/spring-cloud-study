@@ -1,7 +1,7 @@
 spring:
   cloud:
     consul:
-      host: 47.92.241.17
+      host: localhost
       port: 8500
       config:
         enabled: true    # 启用配置中心
