@@ -2,13 +2,13 @@ package kite.springcloud.consul.customer.controller;
 
 import kite.springcloud.consul.customer.service.IHelloService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import javax.annotation.Resource;
 
 /**
  * ConsumerController
@@ -29,7 +29,7 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @Autowired
+    @Resource
     private IHelloService helloService;
 
     private final static String SERVICE_NAME = "consul-provider";
@@ -42,7 +42,7 @@ public class ConsumerController {
      */
     @GetMapping(value = "test")
     public Object test() {
-        String result = restTemplate.getForObject("http://"+SERVICE_NAME + "/test", String.class);
+        String result = restTemplate.getForObject("http://" + SERVICE_NAME + "/test", String.class);
         System.out.println(result);
         return result;
     }
