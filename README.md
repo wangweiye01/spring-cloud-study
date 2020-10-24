@@ -2,7 +2,6 @@
 ![Java](https://img.shields.io/badge/JDK-1.8-green.svg)
 [![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-Greenwich.SR2-blue.svg)](https://spring.io/projects/spring-cloud)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.1.6.RELEASE-brightgreen.svg)](https://spring.io/projects/spring-boot)
-[![wechat](https://img.shields.io/badge/公众号-古时的风筝-success.svg)]()
 
 > Spring Cloud 和众多的其他框架一样，说到底只是一个工具。其实没有什么难度可言，只要花点时间实践一下，人人都可以使用。
 > 工具的使用都是一样的，所以使用手册也是大同小异。当然，使用姿势正确得当，系统也就更稳定，性能更好。
@@ -42,5 +41,3 @@
 [Spring Cloud OAuth2 授权码模式，微信授权就是这个原理](https://mp.weixin.qq.com/s/r3G8Te9f9uXSbf8YaUV6MA)
 ：[对应源码](https://github.com/huzhicheng/spring-cloud-study/tree/master/oauth2/oauth2-client-authorization-code-server)
 如果觉得有用，请给个 star,还可以关注我的公众号。
-## 微信公众号
-![古时的风筝](https://tva1.sinaimg.cn/large/007S8ZIlly1gfd6gx54haj314z0npafp.jpg)
