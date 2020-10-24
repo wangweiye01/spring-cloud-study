@@ -2,9 +2,9 @@ spring:
   application:
     name: auth-server
   datasource:
-    url: jdbc:mysql://localhost:3306/spring_cloud?characterEncoding=UTF-8&useSSL=false
-    username: root
-    password: P@ssw0rd
+    url: jdbc:mysql://47.92.241.17:3306/oauth2server?characterEncoding=UTF-8&useSSL=false
+    username: oauth2server
+    password: 2t#svzPYp3RS
     hikari:
       connection-timeout: 30000
       idle-timeout: 600000
@@ -12,9 +12,9 @@ spring:
       maximum-pool-size: 9
   redis:
     database: 2
-    host: localhost
-    port: 32768
-    password: 1qaz@WSX
+    host: 47.92.241.17
+    port: 9865
+    password: 7YfN#Dk54w25r3
     jedis:
       pool:
         max-active: 8
