@@ -20,17 +20,17 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: false
-      routes:
-      - id: userServiceRouter
-        uri: lb://consul-user
-        predicates:
-        - Path=/user-service/**
-      - id: orderServiceRouter
-        uri: lb://consul-order
-        predicates:
-        - Path=/order-service/**
-        filters:
-        - StripPrefix=1
+#      routes:
+#      - id: userServiceRouter
+#        uri: lb://consul-user
+#        predicates:
+#        - Path=/user-service/**
+#      - id: orderServiceRouter
+#        uri: lb://consul-order
+#        predicates:
+#        - Path=/order-service/**
+#        filters:
+#        - StripPrefix=1
     consul:
       host: localhost #注册gateway网关到consul
       port: 8500
