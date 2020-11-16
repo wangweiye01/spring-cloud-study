@@ -23,7 +23,6 @@
         <module>sleuth</module>
         <module>config</module>
         <module>security</module>
-        <module>boot</module>
         <module>monitor</module>
         <module>oauth2</module>
     </modules>
